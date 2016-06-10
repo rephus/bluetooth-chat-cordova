@@ -1,0 +1,34 @@
+body { }
+
+#content {
+    /*padding-bottom:60px;*/
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    text-align:center;
+}
+
+ main {
+   flex: 1 0 auto;
+ }
+
+/*Hide Cordova loading tag */
+.ui-loader {
+  display:none;
+}
+
+a {
+  color: #00AEEF ;
+  text-decoration: none;
+}
+
+
+ol, ul {
+  padding:0px;
+  height:50px;
+  overflow:auto;
+}
+li {
+  padding:0px;
+  border:1px solid #ccc;
+}

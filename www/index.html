@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'"></meta>
+        <meta name="format-detection" content="telephone=no"></meta>
+        <meta name="msapplication-tap-highlight" content="no"></meta>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"></meta>
+
+        <link rel=stylesheet type=text/css href=css/chat.css></link>
+        <link rel=stylesheet type=text/css href=css/index.css></link>
+        <link rel="stylesheet" href="css/materialize.min.css"></link>
+
+        <script type='text/javascript' src='js/utils.js'></script>
+
+        <script type='text/javascript' src=js/ux/jquery.min.js></script>
+        <script type='text/javascript' src=js/ux/mustache.min.js></script>
+        <script type='text/javascript' src=js/ux/materialize.min.js></script>
+
+        <script type='text/javascript' src=js/bluetooth.js></script>
+
+        <title>Bluetooth chat Cordova</title>
+    </head>
+    <body>
+        <div id='content'>
+              <button class='waves-effect waves-light btn' id='bt-scan'>Scan devices</button>
+              <script id='device-template' type=x-tmpl-mustache>
+                  <li id='device' deviceid='{{device.id}}' title='{{ title }}'>
+                    {{ #device }}
+                      {{id}}: {{name}}
+                    {{ /device }}
+                  </li>
+              </script>
+              <ol id='list-devices'>
+              </ol>
+              <p id='bt-status' >Not connected</p>
+
+              <script id='chat-template' type=x-tmpl-mustache>
+                <div class='{{ type }}'>
+                  <p class='text card-panel'> {{ text }} </p>
+                  <p class='time'> {{ time }}</p>
+                </div>
+
+              </script>
+              <div id='chat'>
+
+              </div>
+              <button class='waves-effect waves-light btn' id='clear-chat'>Clear</button>
+
+
+                  <input type='text' id='custom-message' placeholder='Message'/>
+                  <button class='waves-effect waves-light btn' id='custom-message-button'>Send</button>
+        </div>
+
+        <script type=text/javascript src=cordova.js></script>
+        <script type='text/javascript' src=js/cordova/start.js></script>
+        <script type='text/javascript' src=js/controls.js></script>
+    </body>
+</html>
